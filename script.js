@@ -1,4 +1,6 @@
 /////////////////////////////////////////////////////////////////////
+var model
+ model = await handpose.load();
 (function() {
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
@@ -22,10 +24,11 @@
     ///////////////////////////////////////////////////////////////
     async function draw(video,context, width, height){
         context.drawImage(video,0,0,width,height);
-        const model = await handpose.load();
+        
+        console.log("=====@@@@@@@@",model)
         const predictions = await model.estimateHands(video);
         console.log(predictions);
-        ///////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////
         if (predictions.length > 0){
            for (let i = 0; i < predictions.length; i++) {
             drawHand(predictions,context);
