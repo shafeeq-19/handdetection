@@ -9,14 +9,26 @@
  </head> 
  <body> 
     <div class="jumbotron">
-        <h3 class="display-4">Hand pose detection using tensorflow.js</h1>
-        <hr class="my-4">
-        <p>By MLK</p>
+      <div class="grid-container">
+        <div class="grid-item">
+            <img src="ring.png" alt="Image 1" class="image_choosen">
+        </div>
+        <div class="grid-item">
+            <img src="ring11.png" alt="Image 2" class="image_choosen">
+        </div>
+        <div class="grid-item">
+            <img src="ring22.png" alt="Image 3" class="image_choosen">
+        </div>
+        <!-- Add more grid items as needed -->
+    </div>
+       
     </div>
 
    <div id="videoContainer">
         <video autoplay="true" id="videoElement" style="display:none"></video>
-        <canvas id="canvas" width="640" height="520"></canvas>
+        <canvas id="canvas" width="940" height="720">
+          
+        </canvas>
    </div>
     <!-- Require the peer dependencies of handpose. -->
     <script src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
@@ -26,6 +38,15 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-cpu@3.13.0/dist/tf-backend-cpu.js"></script> -->
     <script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
     <script src="https://unpkg.com/@tensorflow-models/handpose@0.0.6/dist/handpose.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <script src="script.js" type="module"></script>
+    <script>
+      sessionStorage.setItem('imgurl', 'ring.png');
+      $('.image_choosen').on('click', function(e) {
+        let imgSrc = $(e.target).attr('src')
+        sessionStorage.setItem('imgurl', imgSrc);
+    })
+    </script>
  </body> 
 </html>

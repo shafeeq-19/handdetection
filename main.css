@@ -8,3 +8,23 @@
     height: 500px;
     border: 10px #333 solid;
 }
+.jumbotron {
+    padding: 0rem 2rem !important;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    grid-gap: 10px; /* Adjust the gap between images as needed */
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Adjust the height of each image item */
+}
+
+.grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
